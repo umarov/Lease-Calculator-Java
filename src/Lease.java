@@ -5,8 +5,8 @@ public class Lease
 	private double costPerMile;
 	private int lengthOfLease;
 	private int currentMonthOfLease;
-	private Car[] cars = new Car[5];
-	private int numberOfCars = 0;
+	Car leasedCar;
+	
 	
 	public Lease()
 	{
@@ -15,8 +15,13 @@ public class Lease
 	
 	public Car addCarToLease(String make, String model, int year, double mile)
 	{
-		cars[numberOfCars++] = new Car(make, model, year, mile);
-		return cars[numberOfCars];
+		leasedCar = new Car(make, model, year, mile);
+		return leasedCar;
+	}
+	
+	public Car getLeasedCar()
+	{
+		return leasedCar;
 	}
 	
 	public double getMaximumMiles()
